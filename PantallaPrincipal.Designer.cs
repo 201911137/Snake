@@ -79,6 +79,7 @@
             this.Controls.Add(this.AreaDeJuego);
             this.Name = "PantallaPrincipal";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PantallaPrincipal_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.AreaDeJuego)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
