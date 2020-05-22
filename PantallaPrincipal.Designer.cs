@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AreaDeJuego = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.puntos = new System.Windows.Forms.Label();
+            this.TxtPuntos = new System.Windows.Forms.Label();
             this.bucle = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AreaDeJuego)).BeginInit();
             this.SuspendLayout();
@@ -54,15 +54,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Total de puntos:";
             // 
-            // puntos
+            // TxtPuntos
             // 
-            this.puntos.AutoSize = true;
-            this.puntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntos.Location = new System.Drawing.Point(269, 420);
-            this.puntos.Name = "puntos";
-            this.puntos.Size = new System.Drawing.Size(36, 39);
-            this.puntos.TabIndex = 2;
-            this.puntos.Text = "0";
+            this.TxtPuntos.AutoSize = true;
+            this.TxtPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPuntos.Location = new System.Drawing.Point(269, 420);
+            this.TxtPuntos.Name = "TxtPuntos";
+            this.TxtPuntos.Size = new System.Drawing.Size(36, 39);
+            this.TxtPuntos.TabIndex = 2;
+            this.TxtPuntos.Text = "0";
             // 
             // bucle
             // 
@@ -74,7 +74,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 474);
-            this.Controls.Add(this.puntos);
+            this.Controls.Add(this.TxtPuntos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AreaDeJuego);
             this.Name = "PantallaPrincipal";
@@ -90,7 +90,7 @@
 
         private System.Windows.Forms.PictureBox AreaDeJuego;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label puntos;
+        private System.Windows.Forms.Label TxtPuntos;
         private System.Windows.Forms.Timer bucle;
     }
 }
