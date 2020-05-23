@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.AreaDeJuego = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtPuntos = new System.Windows.Forms.Label();
@@ -77,8 +78,10 @@
             this.Controls.Add(this.TxtPuntos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AreaDeJuego);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
-            this.Text = "Form1";
+            this.Text = "El mejor juego de la historia (Snake)";
+            this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PantallaPrincipal_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.AreaDeJuego)).EndInit();
             this.ResumeLayout(false);

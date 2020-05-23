@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Snake
 {
@@ -46,6 +47,8 @@ namespace Snake
                 Cabeza.Crecer();
                 IntPuntuacion++;
                 TxtPuntos.Text = IntPuntuacion.ToString();
+                SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\Coin.wav");
+                simpleSound.Play();
             }
         }
         public void FinalizarJuego()
@@ -58,6 +61,8 @@ namespace Snake
             DireccionY = 0;
             Cabeza = new Cuerpo(10, 10);
             comida = new Comida();
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\GameOver.wav");
+            simpleSound.Play();
             MessageBox.Show("Game Over!");
         }
         public void ColisionarParedes()
@@ -67,6 +72,13 @@ namespace Snake
                 FinalizarJuego();
             }
         }
+
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\Inicio.wav");
+            simpleSound.Play();
+        }
+
         public void ColisionCuerpo()
         {
             Cuerpo CuerpoTemporal;

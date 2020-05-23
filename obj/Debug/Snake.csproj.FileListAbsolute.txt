@@ -18,3 +18,5 @@ C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Snake.csproj.GenerateRes
 C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
 C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Snake.exe
 C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Snake.pdb
+C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Interop.WMPLib.dll
+C:\Users\marlpaz\Source\Repos\201911137\Snake\obj\Debug\Snake.csproj.ResolveComReference.cache
