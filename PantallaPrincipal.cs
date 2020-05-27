@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
+
 
 namespace Snake
 {
@@ -19,7 +21,9 @@ namespace Snake
         int IntPuntuacion = 0;
         int DireccionX = 0, DireccionY = 0;
         int IntCuadro = 10;
+        int IntLogros = 0;
         Boolean EjeX = true, EjeY = true;  //Controla el moviento de la serpiente (para que no retorne en la misma direccion)
+        
         public PantallaPrincipal()
         {
             InitializeComponent();
@@ -47,10 +51,26 @@ namespace Snake
                 Cabeza.Crecer();
                 IntPuntuacion++;
                 TxtPuntos.Text = IntPuntuacion.ToString();
-                SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\Coin.wav");
+                ProgressBar();
+                SoundPlayer simpleSound = new SoundPlayer(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Multimedia\Sonidos\Coin.wav");
                 simpleSound.Play();
             }
         }
+
+        public void ProgressBar()
+        {
+            PbrPuntosLogro.Value = IntPuntuacion;
+            if (PbrPuntosLogro.Value == PbrPuntosLogro.Maximum)
+            {
+                IntLogros++;
+                PbrPuntosLogro.Maximum = PbrPuntosLogro.Maximum + PbrPuntosLogro.Maximum;
+                LblLogrosAlcanzados.Text = IntLogros.ToString();
+                //PbrPuntosLogro.Value = 0;
+                LblProximoLogro.Text = PbrPuntosLogro.Maximum.ToString() + " puntos";
+                PbrPuntosLogro.Value = IntPuntuacion;
+            }
+        }
+
         public void FinalizarJuego()
         {
             IntPuntuacion = 0;
@@ -61,7 +81,7 @@ namespace Snake
             DireccionY = 0;
             Cabeza = new Cuerpo(10, 10);
             comida = new Comida();
-            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\GameOver.wav");
+            SoundPlayer simpleSound = new SoundPlayer(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Multimedia\Sonidos\GameOver.wav");
             simpleSound.Play();
             MessageBox.Show("Game Over!");
         }
@@ -75,7 +95,12 @@ namespace Snake
 
         private void PantallaPrincipal_Load(object sender, EventArgs e)
         {
-            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\marlpaz\Source\Repos\201911137\Snake\Multimedia\Sonidos\Inicio.wav");
+            PbrPuntosLogro.Maximum = 10;
+            PbrPuntosLogro.Minimum = 0;
+            PbrPuntosLogro.Step = 1;
+            LblLogrosAlcanzados.Text = "0";
+            LblProximoLogro.Text = "10 puntos";
+            SoundPlayer simpleSound = new SoundPlayer(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Multimedia\Sonidos\Inicio.wav");
             simpleSound.Play();
         }
 
