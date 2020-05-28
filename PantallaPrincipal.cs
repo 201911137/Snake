@@ -65,7 +65,6 @@ namespace Snake
                 IntLogros++;
                 PbrPuntosLogro.Maximum = PbrPuntosLogro.Maximum + PbrPuntosLogro.Maximum;
                 LblLogrosAlcanzados.Text = IntLogros.ToString();
-                //PbrPuntosLogro.Value = 0;
                 LblProximoLogro.Text = PbrPuntosLogro.Maximum.ToString() + " puntos";
                 PbrPuntosLogro.Value = IntPuntuacion;
             }
@@ -81,6 +80,11 @@ namespace Snake
             DireccionY = 0;
             Cabeza = new Cuerpo(10, 10);
             comida = new Comida();
+            PbrPuntosLogro.Maximum = 10;
+            PbrPuntosLogro.Minimum = 0;
+            PbrPuntosLogro.Value = 0;
+            LblLogrosAlcanzados.Text = "0";
+            LblProximoLogro.Text = "10 puntos";
             SoundPlayer simpleSound = new SoundPlayer(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\Multimedia\Sonidos\GameOver.wav");
             simpleSound.Play();
             MessageBox.Show("Game Over!");
